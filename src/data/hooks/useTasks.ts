@@ -28,7 +28,7 @@ export default function useTasks() {
   }
   useEffect(() => {
     fetchTasks()
-  }, [])
+  })
 
   return {
     fetchTasks,

@@ -11,35 +11,17 @@ import { DeleteTaskModal } from "../DeleteTaskModal";
 import styles from "./tasks.module.scss";
 
 export function Tasks() {
-  const {
-    tasksPending,
-    tasksFinalized,
-    setTasksFinalized,
-    setTasksPending,
-    fetchTasks,
-  } = useTasks();
+  const { tasksPending, tasksFinalized, fetchTasks } = useTasks();
   const [selectedTask, setSelectedTask] = useState("");
   const [isOpenAddTaskModal, setIsOpenAddTaskModal] = useState(false);
   const [isOpenDeleteTaskModal, setIsOpenDeleteTaskModal] = useState(false);
 
-  function updateTasks(isChecked: boolean, task: TaskModel) {
-    if (isChecked) {
-      setTasksPending([...tasksPending, { ...task, status: "pending" }]);
-      setTasksFinalized(tasksFinalized.filter((t) => t.id !== task.id));
-    } else {
-      setTasksPending(tasksPending.filter((t) => t.id !== task.id));
-      setTasksFinalized([...tasksFinalized, { ...task, status: "finished" }]);
-    }
-  }
-
   async function handleCheckboxChange(task: TaskModel, isChecked: boolean) {
-    updateTasks(isChecked, task);
-
     try {
       await updateTask(task.id, isChecked ? "finished" : "pending");
+      fetchTasks();
     } catch (err) {
       console.error("Failed to update task:", err);
-      updateTasks(isChecked, task);
     }
   }
 

@@ -23,6 +23,7 @@ export function AddTaskModal({ onClose, onTaskAdded }: AddTaskModalProps) {
       await addTask(taskDescription);
       onTaskAdded();
     } catch (err) {
+      console.error("Error adding task:", err);
     } finally {
       onClose(true);
       setIsAdding(false);
