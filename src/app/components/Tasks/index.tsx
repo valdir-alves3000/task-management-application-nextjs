@@ -3,7 +3,7 @@
 import trashIcon from "@/app/assets/trash.svg";
 import { TaskModel } from "@/backend/models/task-model";
 import updateTask from "@/backend/tasks/update-task";
-import useTasks from "@/data/hooks /useTasks";
+import useTasks from "@/data/hooks/useTasks";
 import Image from "next/image";
 import { useState } from "react";
 import { AddTaskModal } from "../AddTaskModal";
