@@ -1,0 +1,153 @@
+.container {
+  position: relative;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  .tarefas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    gap: 24px;
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    border: 1px solid #eaecf0;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 16px;
+    margin: 0 auto;
+
+    .tarefasHeader {
+      width: 134px;
+      height: 19px;
+      font-weight: 400;
+      line-height: 19px;
+      letter-spacing: -0.02em;
+      color: rgba(0, 0, 0, 0.54);
+    }
+
+    .taskList {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      gap: 24px;
+      width: 100%;
+      max-width: 386px;
+      list-style: none;
+
+      .taskItem {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        gap: 16px;
+        width: 100%;
+        max-width: 386px;
+        height: 56px;
+        border: 1px dashed #d7dde9;
+        border-radius: 8px;
+        position: relative;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #f7f9fd;
+        }
+
+        input[type="checkbox"] {
+          appearance: none;
+          padding: 0;
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          left: 16px;
+          top: 16px;
+          border: 1px solid #d7dde9;
+          border-radius: 4px;
+          cursor: pointer;
+
+          &:checked {
+            border: 1px solid #0796d3;
+            background-color: #a0dcf6;
+          }
+          &:checked::before {
+            content: url("../../assets/check.svg");
+            position: absolute;
+            top: 4px;
+            left: 5px;
+          }
+          &:checked ~ .taskText {
+            text-decoration: line-through;
+            color: #b0b0b0;
+          }
+        }
+
+        .taskText {
+          position: absolute;
+          width: 274px;
+          height: 19px;
+          left: 56px;
+          top: 18.5px;
+          font-weight: 400;
+          letter-spacing: -0.02em;
+          color: #000;
+        }
+
+        .trash {
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          right: 16px;
+          top: 16px;
+
+          &:hover {
+            filter: brightness(0) saturate(100%) invert(48%) sepia(84%)
+              saturate(366%) hue-rotate(312deg) brightness(95%) contrast(94%);
+          }
+        }
+      }
+    }
+  }
+
+  .addTaskButton {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 8px;
+    width: 450px;
+    height: 56px;
+    background: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    color: #fff;
+    cursor: pointer;
+    transition: background 1s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(90deg, #0796d3 0%, #53c0f0 98.65%);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+@media (width <= 768px) {
+  .container {
+    top: 36px;
+    margin: 0 24px;
+
+    .addTaskButton {
+      width: 272px;
+    }
+  }
+}
