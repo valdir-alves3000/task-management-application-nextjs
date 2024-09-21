@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Task Management Application
 
-## Getting Started
+![Banner](.github/banner.png)
 
-First, run the development server:
+**Task Management Application** é um sistema de gerenciamento de tarefas que permite realizar operações CRUD (Criar, Ler, Atualizar, Deletar) em tarefas.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Stack Tecnológica
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **ORM**: Prisma
+- **Frontend**: React com Next.js
+- **Backend**: Node.js com TypeScript
+- **Banco de Dados**: Neste caso, estamos utilizando o SQLite, mas a migração para outro banco de dados pode ser realizada facilmente.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Configuração do Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Pré-requisitos
 
-## Learn More
+- Node.js (versão 20 ou superior)
 
-To learn more about Next.js, take a look at the following resources:
+### Instalação
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Configuração Manual
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone o repositório:
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/valdir-alves3000/task-management-application-nextjs.git
+   cd task-management-application-nextjs
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Instale as dependências:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm install
+   ```
+
+3. Configure o banco de dados:
+
+   Crie um arquivo `.env` na raiz do projeto e adicione a URL do seu banco de dados:
+
+   ```env
+   DATABASE_URL="file:./dev.db"
+   ```
+
+4. Execute as migrações do banco de dados:
+
+   ```bash
+   npx prisma migrate dev
+   ```
+
+5. Inicie o servidor:
+
+   ```bash
+   npm run dev
+   ```
+
+## Testes
+
+Os testes são escritos em TypeScript e podem ser executados utilizando os seguintes comandos:
+
+- Para rodar os testes unitários:
+  ```bash
+  npm run test:unit
+  ```
+
+- Para rodar os testes de ponta a ponta (e2e):
+  ```bash
+  npm run test:e2e
+  ```
+
+- Para rodar os testes em modo de observação:
+  ```bash
+  npm run test:watch
+  ```
+
+## Autor
+
+<a href="https://github.com/valdir-alves3000/">
+ <img style="border-radius: 50%; margin-bottom: 10px" src="https://github.com/valdir-alves3000.png" width="100px;" alt=""/>
+ <br />
+ <sub style="margin-right: 1rem;"><b>Valdir Alves </b></sub>🚀</a>
+
+<p style="margin-top: 0.5rem;">Feito com ❤️ por Valdir Alves. Entre em contato!</p>
+
+[![Linkedin Badge](https://img.shields.io/badge/-Valdir-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/valdiralves3000/)](http://linkedin.com/in/valdiralves3000)
+[![Gmail Badge](https://img.shields.io/badge/-valdiralves3000@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:valdiralves3000@gmail.com)](mailto:valdiralves3000@gmail.com)
