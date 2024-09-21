@@ -50,18 +50,18 @@ export function AddTaskModal({ onClose, onTaskAdded }: AddTaskModalProps) {
 
         <div className={styles.buttons}>
           <button
-            onClick={handleSubmit}
-            disabled={isAdding}
-            className={styles.addButton}
-          >
-            {isAdding ? "Adicionando..." : "Adicionar"}
-          </button>
-          <button
             onClick={() => onClose(true)}
             className={styles.cancelButton}
             disabled={isAdding}
           >
             Cancelar
+          </button>
+          <button
+            onClick={handleSubmit}
+            disabled={isAdding}
+            className={styles.addButton}
+          >
+            {isAdding ? "Adicionando..." : "Adicionar"}
           </button>
         </div>
       </div>

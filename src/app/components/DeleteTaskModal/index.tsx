@@ -40,18 +40,18 @@ export function DeleteTaskModal({
 
         <div className={styles.buttons}>
           <button
-            onClick={handleDelete}
-            disabled={isDeleting}
-            className={styles.deleteButton}
-          >
-            {isDeleting ? "Deletando..." : "Deletar"}
-          </button>
-          <button
             onClick={() => onClose(true)}
             className={styles.cancelButton}
             disabled={isDeleting}
           >
             Cancelar
+          </button>
+          <button
+            onClick={handleDelete}
+            disabled={isDeleting}
+            className={styles.deleteButton}
+          >
+            {isDeleting ? "Deletando..." : "Deletar"}
           </button>
         </div>
       </div>
