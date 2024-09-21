@@ -1,0 +1,35 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  top: 24px;
+  padding: 24px 0;
+  height: 60px;
+  border-bottom: 1px solid #d7dde9;
+  font-family: "Inter Tight", sans-serif;
+  letter-spacing: -0.02em;
+
+  .welcomeMessage {
+    font-weight: 500;
+    font-size: 24px;
+    color: #000;
+  }
+
+  .date {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.54);
+  }
+}
+
+@media (width <= 768px) {
+  .header {
+    top: 0;
+    flex-direction: column;
+    height: auto;
+    justify-content: start;
+    align-items: flex-start;
+    margin: 0 24px;
+    gap: 8px;
+  }
+}
