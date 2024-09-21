@@ -1,6 +1,6 @@
 import { TaskModel } from "@/backend/models/task-model"
 import { TaskRepository } from "@/backend/repositories/task-repository"
-import { mockPrisma } from "../__mock__ /mock_prisma_client"
+import { mockPrisma } from "../__mock__/mock_prisma_client"
 
 describe("TaskRepository", () => {
   let _taskRepository: TaskRepository
